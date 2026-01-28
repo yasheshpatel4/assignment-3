@@ -41,7 +41,7 @@ public class BookService {
         book.setPublicationYear(bookDto.getPublicationYear());
 
 
-        Library library = (Library) libraryRepository.findById(bookDto.getLibraryId()).orElse(null);
+        Library library = (Library) libraryRepository.findById((Long) bookDto.getLibraryId()).orElse(null);
         book.setLibrary(library);
 
         Book savedBook = bookRepository.save(book);

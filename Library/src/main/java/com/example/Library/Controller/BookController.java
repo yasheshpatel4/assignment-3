@@ -28,7 +28,7 @@ public class BookController {
         return ResponseEntity.ok(bookService.getBooks(page, size, sortBy));
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public ResponseEntity<Book> createBook(@Valid @RequestBody BookDTO bookDto) {
         Book savedBook = bookService.saveBook(bookDto);
         return new ResponseEntity<>(savedBook, HttpStatus.CREATED);
